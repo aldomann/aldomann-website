@@ -572,8 +572,10 @@ div.alert a {
 
 /* homepage */
 .hero-img{
-  border: 10px solid #fff;
-  box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px 0px;
+  border-radius: 50%;
+  // border: 50px solid;
+  padding: 50px;
+  // box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 30px 0px;
 }
 
 /* about */
