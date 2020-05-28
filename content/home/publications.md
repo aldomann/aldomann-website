@@ -8,7 +8,7 @@ active = false  # Activate this widget? true/false
 weight = 90  # Order that this section will appear.
 
 title = "Recent Publications"
-subtitle = "Some publications i have recently published"
+subtitle = ""
 
 [content]
   # Page type to display. E.g. post, talk, or publication.
@@ -28,6 +28,7 @@ subtitle = "Some publications i have recently published"
     tag = ""
     category = ""
     publication_type = ""
+    author = ""
     exclude_featured = false
 
 [design]
@@ -36,7 +37,7 @@ subtitle = "Some publications i have recently published"
   #   2 = Compact
   #   3 = Card
   #   4 = Citation (publication only)
-  view = 3
+  view = 2
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -65,3 +66,7 @@ subtitle = "Some publications i have recently published"
  # CSS class.
  css_class = ""
 +++
+
+{{% alert note %}}
+Quickly discover relevant content by [filtering publications]({{< ref "/publication/_index.md" >}}).
+{{% /alert %}}

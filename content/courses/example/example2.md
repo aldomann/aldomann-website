@@ -14,7 +14,7 @@ menu:
 weight: 2
 ---
 
-Here are some more tips for getting started with academia:
+Here are some more tips for getting started with Academic:
 
 ## Tip 3
 

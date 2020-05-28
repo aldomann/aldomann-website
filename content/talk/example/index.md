@@ -1,9 +1,17 @@
 ---
-title: Qualitative Research Summer Intensive
-event: academia Theme Conference
+title: Example Talk
+event: Academic Theme Conference
 event_url: https://example.org
-location: London, United Kingdom
-summary: An example talk using academia's Markdown slides feature.
+
+location: Source Themes HQ
+address:
+  street: 450 Serra Mall
+  city: Stanford
+  region: CA
+  postcode: '94305'
+  country: United States
+
+summary: An example talk using Academic's Markdown slides feature.
 abstract: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellusac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam."
 
 # Talk start and end times.
@@ -26,10 +34,10 @@ image:
   focal_point: Right
 
 links:
-#- icon: twitter
-#  icon_pack: fab
-#  name: Follow
-#  url: https://twitter.com/georgecushen
+- icon: twitter
+  icon_pack: fab
+  name: Follow
+  url: https://twitter.com/georgecushen
 url_code: ""
 url_pdf: ""
 url_slides: ""
@@ -40,7 +48,7 @@ url_video: ""
 #   Simply enter your slide deck's filename without extension.
 #   E.g. `slides = "example-slides"` references `content/slides/example-slides.md`.
 #   Otherwise, set `slides = ""`.
-slides: 
+slides: example
 
 # Projects (optional).
 #   Associate this post with one or more of your projects.
@@ -48,7 +56,7 @@ slides:
 #   E.g. `projects = ["internal-project"]` references `content/project/deep-learning/index.md`.
 #   Otherwise, set `projects = []`.
 projects:
-# - internal-project
+- internal-project
 
 # Enable math on this page?
 math: true
@@ -60,7 +68,7 @@ Click on the **Slides** button above to view the built-in slides feature.
 
 Slides can be added in a few ways:
 
-- **Create** slides using academia's [*Slides*](https://sourcethemes.com/academic/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
+- **Create** slides using Academic's [*Slides*](https://sourcethemes.com/academic/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
 - **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
 - **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://sourcethemes.com/academic/docs/writing-markdown-latex/).
 

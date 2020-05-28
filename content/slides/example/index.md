@@ -1,6 +1,6 @@
 ---
 title: Slides
-summary: An introduction to using academia's Slides feature.
+summary: An introduction to using Academic's Slides feature.
 authors: []
 tags: []
 categories: []
@@ -13,9 +13,9 @@ slides:
   highlight_style: dracula
 ---
 
-# Welcome to Slides
+# Create slides in Markdown with Academic
 
-[academia](https://sourcethemes.com/academic/)
+[Academic](https://sourcethemes.com/academic/) | [Documentation](https://sourcethemes.com/academic/docs/managing-content/#create-slides)
 
 ---
 
@@ -50,7 +50,7 @@ Code block:
 ```python
 porridge = "blueberry"
 if porridge == "blueberry":
-  print("Eating...")
+    print("Eating...")
 ```
 
 ---
@@ -161,6 +161,6 @@ Create `assets/css/reveal_custom.css` with:
 
 # Questions?
 
-[Ask](https://discourse.gohugo.io)
+[Ask](https://spectrum.chat/academic)
 
-[Documentation](https://sourcethemes.com/academic/docs/)
+[Documentation](https://sourcethemes.com/academic/docs/managing-content/#create-slides)

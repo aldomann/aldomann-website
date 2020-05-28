@@ -14,7 +14,7 @@ menu:
 weight: 1
 ---
 
-In this tutorial, I'll share my top 10 tips for getting started with Academia:
+In this tutorial, I'll share my top 10 tips for getting started with Academic:
 
 ## Tip 1
 
