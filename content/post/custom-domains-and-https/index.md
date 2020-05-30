@@ -1,11 +1,11 @@
 ---
-title: "Using Jekyll, Lightbox, and GitHub pages"
+title: "Custom domains and HTTPS with Github Pages"
 subtitle: ""
 summary: "On this post I will try to explain shortly my (mis)adventures on setting up my own custom domain."
 authors: [admin]
 
-tags: [blog, jekyll]
-categories: []
+tags: [blog, jekyll, deployment]
+categories: [tech]
 projects: []
 
 date: "2018-04-22T00:00:00Z"

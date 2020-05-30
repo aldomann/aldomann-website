@@ -5,7 +5,7 @@ summary: "A couple of weeks ago I decided to write my own book about LaTeX."
 authors: [admin]
 
 tags: [latex]
-categories: []
+categories: [tech]
 projects: [the-way-to-latex]
 
 date: "2018-02-27T00:00:00Z"

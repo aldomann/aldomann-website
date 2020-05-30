@@ -1,11 +1,11 @@
 ---
 title: "Using Jekyll, Lightbox, and GitHub pages"
 subtitle: ""
-summary: Summary
+summary: "My journey figuring out how to implement Lightbox in Jekyll."
 authors: [admin]
 
 tags: [blog, jekyll]
-categories: []
+categories: [tech]
 projects: []
 
 date: "2018-03-06T00:00:00Z"

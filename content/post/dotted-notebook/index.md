@@ -5,7 +5,7 @@ summary: "I bought a dot-grid notebook to start working again on mockups again."
 authors: [admin]
 
 tags: [mockups]
-categories: []
+categories: [design]
 projects: [mockups]
 
 date: "2018-03-01T00:00:00Z"
