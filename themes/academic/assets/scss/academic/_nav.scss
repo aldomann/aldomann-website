@@ -69,7 +69,28 @@
 }
 
 .dark .navbar {
+  background: $sta-dark-menu-primary;
   box-shadow: 0 0.125rem 0.25rem 0 rgba(255, 255, 255, .11);
+  .navbar-nav {
+    .nav-link {
+      color: rgba($sta-dark-menu-text, .85);
+
+      &.active,
+      &:hover,
+      &:focus {
+        color: $sta-dark-menu-text-active;
+      }
+
+      &.active {
+        font-weight: bold !important;
+        color: $sta-dark-menu-text-active !important;
+      }
+    }
+  }
+  .dropdown-item.active,
+  .dropdown-item-active {
+    color: $sta-dark-menu-text-active !important;
+  }
 }
 
 // Remove Bootstrap's border from Toggle button.
@@ -78,6 +99,11 @@
   position: relative;  // For z-index clickable mobile logo.
   z-index: 1030;
 }
+
+.dark .navbar-toggler {
+ color: $sta-dark-menu-text;
+}
+
 .navbar-toggler:focus,
 .navbar-toggler:active {
   outline: none !important;
@@ -119,6 +145,10 @@
   z-index: 1030;  // For z-index clickable mobile logo.
 }
 
+.dark .navbar-brand {
+  color: $sta-dark-menu-title;
+}
+
 // Dynamically fit logo image to space available.
 // No need to explicitly set a size for each breakpoint.
 // See https://caniuse.com/#feat=mdn-css_properties_width_stretch .
@@ -134,6 +164,10 @@
 
 #navbar-main .main-menu-item ul li .nav-link {
   color: $sta-menu-text;
+}
+
+.dark #navbar-main .main-menu-item ul li .nav-link {
+  color: $sta-dark-menu-text;
 }
 
 @include media-breakpoint-down(md) {
@@ -165,6 +199,9 @@
     width: 100%;
     background-color: $sta-menu-primary;
     text-align: center !important;
+  }
+  .dark .navbar-collapse {
+    background-color: $sta-dark-menu-primary;
   }
   #navbar-main .main-menu-item .nav-item {
     padding: 10px 15px !important;
@@ -200,7 +237,17 @@ ul.nav-icons li.nav-item a.nav-link {
   z-index: 1032;  // I18n dropdown over mobile expanded menu.
 }
 
+.dark .dropdown-menu {
+  background-color: $sta-dark-menu-primary !important;
+  color: $sta-dark-menu-text !important;
+}
+
 .dropdown-item {
   background-color: $sta-menu-primary !important;
   color: $sta-menu-text !important;
+}
+
+.dark .dropdown-item {
+  background-color: $sta-dark-menu-primary !important;
+  color: $sta-dark-menu-text !important;
 }
