@@ -1,12 +1,20 @@
-+++
+---
 # Gallery section using the Blank widget and Gallery element (shortcode).
-widget = "blank"  # See https://sourcethemes.com/academic/docs/page-builder/
-headless = true  # This file represents a page section.
-active = true  # Activate this widget? true/false
-weight = 66  # Order that this section will appear.
+# Documentation: https://sourcethemes.com/academic/docs/page-builder/
+widget: blank
 
-title = "Gallery"
-subtitle = ""
-+++
+# This file represents a page section.
+headless: true
+
+# Activate this widget? true/false
+active: false
+
+# Order that this section appears on the page.
+weight: 66
+
+# Note: `&shy;` is used to add a 'soft' hyphen in a long heading.
+title: 'Gallery'
+subtitle:
+---
 
 {{< gallery >}}
