@@ -1,7 +1,7 @@
 ---
 # Course title, summary, and position.
 title: Git
-summary: Learn how to use Academic's docs layout for publishing online courses, software documentation, and tutorials.
+summary: Installation guide and list of some basic and advanced commands for Git.
 weight: 1
 
 # Page metadata.
@@ -10,14 +10,6 @@ lastmod: "2020-12-23T00:00:00Z"
 draft: false  # Is this a draft? true/false
 toc: true  # Show table of contents? true/false
 type: book  # Do not modify.
-
-# Add menu entry to sidebar.
-# - name: Declare this menu item as a parent with ID `name`.
-# - weight: Position of link in menu.
-menu:
-  example:
-    name: Overview
-    weight: 1
 ---
 
 Git is a free and open source version control system, originally created by Linus Torvalds in 2005. Unlike older centralized version control systems such as SVN and CVS, Git is distributed: every developer has the full history of their code repository locally. This makes the initial clone of the repository slower, but subsequent operations such as commit, blame, diff, merge, and log dramatically faster.
