@@ -10,6 +10,7 @@ weight: 2
 ---
 
 ## Initial set-up
+
 ```bash
 git init
 git remote add origin https://github.com/aldomann/repo.git #Add Git repo to folder
@@ -19,6 +20,7 @@ git branch --set-upstream-to origin/master
 ```
 
 ## Commands
+
 ```bash
 git status -s
 git add -A
@@ -27,16 +29,19 @@ git push
 ```
 
 ## Garbage Clean
+
 ```bash
 git gc
 ```
 
 ## Delete every untracked file and directory
+
 ```bash
 git clean -d -f -x
 ```
 
 ## Remove directory from remote repository after adding them to .gitignore
+
 ```bash
 git rm -r --cached some-directory
 git commit -m 'Remove the now ignored directory "some-directory"'
@@ -44,6 +49,7 @@ git push origin master
 ```
 
 ## Reset repo when having pull conflicts
+
 ```bash
 git fetch --all
 git reset --hard origin/master

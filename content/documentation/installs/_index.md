@@ -1,6 +1,6 @@
 ---
 # Course title, summary, and position.
-title: Installation Guides
+title: Installation guides
 summary: Installation guides for Wine Apps, Games, and other apps that require additional setup.
 weight: 2
 
