@@ -1,4 +1,12 @@
+# Rproj
 .Rproj.user
 .Rhistory
 .RData
 .Ruserdata
+
+# Hugo
+/public
+/resources
+
+# Local Netlify folder
+.netlify
