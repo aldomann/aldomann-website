@@ -3,6 +3,7 @@ title: Jekyll
 toc: true
 type: book
 date: "2019-12-10T00:00:00Z"
+lastmod: "2020-12-23T00:00:00Z"
 draft: false
 
 # Prev/next pager order (if `docs_section_pager` enabled in `params.toml`)
@@ -41,9 +42,9 @@ Most Jekyll templates come with a `Gemfile` that specifies which plugins/package
 gem install bundle
 ```
 
-Then you just open a terminal on your template's root folder and execute `bundle`:
+Then you just open a terminal on your template's root folder (`<PATH>`) and execute `bundle`:
 ```bash
-cd PATH
+cd <PATH>
 bundle install
 ```
 
