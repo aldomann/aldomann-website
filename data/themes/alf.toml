@@ -5,8 +5,7 @@ name = "Alf"
 light = true
 
 # Primary
-# primary = "#fc6f5c"
-primary = "hsl(249, 70%, 66%)"
+primary = "#7c4dff"
 
 # Menu
 menu_primary = "#fff"
