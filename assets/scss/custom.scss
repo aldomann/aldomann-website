@@ -1,7 +1,7 @@
 /* Whole document: */
 
 body {
-  margin-top: 100px !important;
+  margin-top: 75px !important;
   color: #172A3A;
 }
 
@@ -10,31 +10,32 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-weight: 400;
+	font-weight: 700;
   letter-spacing: 0.04em;
   color: #172A3A;
 }
 
 /* links */
 
-a:active, 
-a:focus, 
+a:active,
+a:focus,
 a:hover {
-  color: #004346;
+  color: #492a9e;
 }
 
 /* nav */
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-	color: #06805E;
+	color: #7c4dff;
 }
 
 .navbar {
   box-shadow: none;
-  text-transform: uppercase;
+  // text-transform: uppercase;
 	letter-spacing: .1em;
-	font-size: .9em;
+	font-size: 1em;
+  font-weight: 500;
 }
 
 .navbar-brand {
@@ -67,7 +68,7 @@ a:hover {
   width: 0%;
   content: '.'; /* make invisible, dot beneath links */
   color: transparent;
-  background: #06805E;
+  background: #7c4dff;
   height: 2px;
 }
 
@@ -94,7 +95,15 @@ a:hover {
 }
 
 .home-section:not(:first-of-type) {
-  padding: 25px 0 50px 0; 
+  padding: 25px 0 50px 0;
+}
+
+.big-icon {
+  font-size: 1.25rem;
+}
+
+#profile .network-icon {
+  margin-top: 5px;
 }
 
 /* this erases the margin-bottom for h1 */
@@ -116,25 +125,44 @@ a:hover {
 /* code */
 /* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
 
-pre, code {
-	color: #4A7E86;
-	background-color: #fff;
-	padding-left: .5em;
-	padding-right: .5em;
-}
-
 pre {
-  border: 1px solid #fff;
-  box-shadow: 5px 5px 5px #eee;
-  padding: 0.25em;
-  background: #fff;
-  overflow-x: auto;
-  border-radius: 0px; /*undo rounded corners*/
+  border: 0.1em solid rgb(151, 157, 167);
+  border-radius: 0.5em;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  // padding: 0.25rem;
+  font-size: .9rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+  background-color: #f5f5f5;
+}
+pre code {
+  padding: 0;
+  font-size: 1em;
+  color: inherit;
+  background-color: transparent;
 }
 
-pre code { 
-  background: none; 
-  font-size: 0.8rem;
+kbd {
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
+  color: inherit;
+  display: inline-block;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0 .1em;
+  padding: .1em .6em;
+  text-shadow: 0 1px 0 #fff;
 }
 
 /* alerts */
@@ -142,7 +170,7 @@ pre code {
 div.alert-note > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #09bc8a;
+  color: #7c4dff;
   content: "\f0a4";
 }
 
@@ -161,9 +189,9 @@ div.alert-todo > div:first-child::before {
 }
 
 .alert-note {
-  color: #004346;
+  color: #492a9e;
   background-color: #fff;
-  border-top: 4pt solid #09bc8a;
+  border-top: 4pt solid #7c4dff;
   border-radius: 0px; /*undo rounded corners*/
   border-right-style: none;
   border-bottom-style: none;
@@ -177,7 +205,7 @@ div.alert > div {
 
 
 div.alert.alert-warning {
-  color: #004346;
+  color: #492a9e;
   background-color: #FFE7ED;
   border-top: 4pt solid #ff003f;
   border-radius: 0px; /*undo rounded corners*/
@@ -188,7 +216,7 @@ div.alert.alert-warning {
 }
 
 div.alert.alert-todo {
-  color: #004346;
+  color: #492a9e;
   background-color: #fff;
   border-top: 4pt solid #D7ADD0;
   border-radius: 0px; /*undo rounded corners*/
@@ -242,7 +270,7 @@ div.universal-wrapper.pt-3 h1 {
 hr {
   border: 0;
   height: 1px;
-  background: #004346;
+  background: #492a9e;
   background-image: none;
 }
 
@@ -251,11 +279,11 @@ hr {
     margin-left: auto;
     margin-right: auto;
  }
- 
+
 .home-section.wg-experience .card-body {
 	padding: .5rem;
 }
- 
+
 .home-section.wg-experience .card .card-text{
   padding: 0;
 }
@@ -276,17 +304,17 @@ iframe {
 /* pagination buttons */
 
 .page-link {
-	color: #004346;
+	color: #492a9e;
 	background-color: #F0F7FA;
-	border: 1px solid #004346;
+	border: 1px solid #492a9e;
   border-radius: 0px; /*undo rounded corners*/
 
 }
 
 .page-link:hover {
 	color: #fff;
-	background-color: #004346;
-	border-color: #004346;
+	background-color: #492a9e;
+	border-color: #492a9e;
 }
 
 .page-item:first-child .page-link {
@@ -300,21 +328,35 @@ iframe {
 }
 
 /* https://github.com/gcushen/hugo-academic/issues/147 */
+
+// @media (min-width: 900px) {
+//   .navbar-expand-lg {
+//     flex-flow: row nowrap !important;
+//     justify-content: flex-start !important;
+//   }
+// }
+
+// @media (min-width: 900px) {
+//   .container-xl, .container-lg, .container-md, .container-sm, .container, .article-container {
+//     max-width: 900px !important;
+//   }
+// }
+
 .container {
-  max-width: 1000px;
+  max-width: 900px;
 }
 
 .carousel-indicators li {
-	background-color: #06805E80;
+	background-color: #7c4dff80;
 }
 
 .section-heading p {
-	color: #004346;
+	color: #492a9e;
 }
 
 /* For 2-column article layout with TOC on right */
 .article-container {
-	max-width: 1000px;
+	max-width: 900px;
 }
 
 .col-lg-2ish {
@@ -322,12 +364,12 @@ iframe {
   max-width:20%;
   padding-right: 0px !important;
  }
- 
+
 .col-lg-10ish {
   flex:0 0 80%;
   max-width:80%;
  }
- 
+
 #TableOfContents li a, .toc-top li a {
 	padding: .125rem .5rem;
 	font-size: .8rem;
@@ -335,7 +377,7 @@ iframe {
 }
 
 #TableOfContents {
-	border-left: 1px solid #09bc8a3d;
+	border-left: 1px solid #7c4dff3d;
 }
 
 html {
@@ -372,6 +414,6 @@ a > svg.anchor-symbol {
 }
 
 a > svg.anchor-symbol:hover {
-  fill: #06805E;
+  fill: #7c4dff;
   transition: fill 0.6s ease;
 }
