@@ -23,7 +23,7 @@ This week I started studying Natural Language Processing and Computational Lingu
 
 There are a lot of technical reasons to use (virtual) environments, but to keep this entry short and simple, an environment acts as a sandbox for all your packages and dependencies. This is very useful when you have different projects that require different dependencies or versions of certain packages.
 
-Note: for this post I will use `nlp-compling` as the environment name in all my examples.
+{{% callout note %}} For this post I will use `nlp-compling` as the environment name in all my examples. {{% /callout %}}
 
 ## Create a new Conda environment
 
