@@ -170,8 +170,8 @@ kbd {
 div.alert-note > div:first-child::before {
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
-  color: #7c4dff;
-  content: "\f0a4";
+  color: #4a6785;
+  content: "\f05a";
 }
 
 div.alert-warning > div:first-child::before {
@@ -189,13 +189,14 @@ div.alert-todo > div:first-child::before {
 }
 
 .alert-note {
-  color: #492a9e;
-  background-color: #fff;
-  border-top: 4pt solid #7c4dff;
-  border-radius: 0px; /*undo rounded corners*/
-  border-right-style: none;
-  border-bottom-style: none;
-  border-left-style: none;
+  border-color: #abb8c7;
+  color: inherit;
+  background-color: #ffffff;
+  border-top: 4pt solid #abb8c7;
+  border-radius: 4px; /*undo rounded corners*/
+  border-right-style: 1pt solid;
+  border-bottom-style: 1pt solid;
+  border-left-style: 1pt solid;
   padding: 23px 10px 21px 10px;
 }
 
