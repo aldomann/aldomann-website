@@ -23,7 +23,9 @@ This week I started studying Natural Language Processing and Computational Lingu
 
 There are a lot of technical reasons to use (virtual) environments, but to keep this entry short and simple, an environment acts as a sandbox for all your packages and dependencies. This is very useful when you have different projects that require different dependencies or versions of certain packages.
 
-{{% callout note %}} For this post I will use `nlp-compling` as the environment name in all my examples. {{% /callout %}}
+{{% callout note %}}
+For this post I will use `nlp-compling` as the environment name in all my examples.
+{{% /callout %}}
 
 ## Create a new Conda environment
 
@@ -78,7 +80,10 @@ After this, we need to set up the environment as an IPython/Jupyter kernel:
 ```bash
 python -m ipykernel install --user --name nlp-compling --display-name "NLP+CompLing"
 ```
+
+{{% callout note %}}
 Note that the `--display-name` argument is optional. More information on this step can be found on [IPython Documentation](https://ipython.readthedocs.io/en/stable/install/kernel_install.html#kernels-for-different-environments).
+{{% /callout %}}
 
 Now, if we head to JupyterLab, we'll see our environment as an option for creating new Notebooks and Consoles:
 

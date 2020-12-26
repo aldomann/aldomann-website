@@ -30,10 +30,12 @@ There are already excellent guides on how to set up your custom domain using Goo
 In short, the steps are the following:
   1. Seting up and buying the Google Domain name.
   2. Creating the CNAME file on your GitHub repository:
-  ```txt
-  aldomann.com
-  www.aldomann.com
-  ```
+
+      ```txt
+      aldomann.com
+      www.aldomann.com
+      ```
+
   3. Setting up the Custom resource records
 {{< figure src="google-custom-records.png" title="Custom resource records" >}}
 
