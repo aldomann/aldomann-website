@@ -2,17 +2,22 @@
 
 body {
   margin-top: 75px !important;
-  color: #172A3A;
+  color: #172a3a;
 }
 
 .navbar {
   min-height: 100px !important;
 }
 
-h1, h2, h3, h4, h5, h6 {
-	font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 700;
   letter-spacing: 0.04em;
-  color: #172A3A;
+  color: #172a3a;
 }
 
 /* links */
@@ -27,21 +32,21 @@ a:hover {
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-	color: #7c4dff;
+  color: #7c4dff;
 }
 
 .navbar {
   box-shadow: none;
   // text-transform: uppercase;
-	letter-spacing: .1em;
-	font-size: 1em;
+  letter-spacing: 0.1em;
+  font-size: 1em;
   font-weight: 500;
 }
 
 .navbar-brand {
   text-transform: uppercase;
   font-weight: 700;
-	letter-spacing: .1em;
+  letter-spacing: 0.1em;
 }
 
 /*----NAV LINK HOVER ANIMATION -----*/
@@ -52,7 +57,7 @@ a:hover {
 .navbar-nav a.nav-link,
 .navbar-nav a.nav-link:after,
 .navbar-nav a.nav-link:before {
-  transition: all .5s;
+  transition: all 0.5s;
 }
 
 .navbar-nav a.nav-link {
@@ -66,7 +71,7 @@ a:hover {
   right: 0;
   margin: auto;
   width: 0%;
-  content: '.'; /* make invisible, dot beneath links */
+  content: "."; /* make invisible, dot beneath links */
   color: transparent;
   background: #7c4dff;
   height: 2px;
@@ -118,7 +123,7 @@ a:hover {
   margin-top: 0;
   margin-bottom: 1rem;
   text-transform: uppercase;
-  letter-spacing: .08em;
+  letter-spacing: 0.08em;
 }
 
 /* code */
@@ -131,7 +136,7 @@ pre {
   margin-top: 0.5rem;
   margin-bottom: 1rem;
   padding: 0.5rem;
-  font-size: .9rem;
+  font-size: 0.9rem;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
@@ -139,7 +144,8 @@ pre {
   word-wrap: break-word;
 }
 
-.hljs, pre {
+.hljs,
+pre {
   background-color: #f1f3f4;
 }
 
@@ -152,42 +158,42 @@ pre code {
 
 kbd {
   -moz-border-radius: 3px;
-  -moz-box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   -webkit-border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0,0,0,0.2), 0 0 0 2px #fff inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
   color: inherit;
   display: inline-block;
   font-size: 0.85rem;
   line-height: 1.4;
-  margin: 0 .1em;
-  padding: .1em .6em;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
   text-shadow: 0 1px 0 #fff;
 }
 
 /* alerts */
 
 div.alert-note > div:first-child::before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #4a6785;
   content: "\f05a";
 }
 
 div.alert-warning > div:first-child::before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   color: #ff003f;
   content: "\f1e2";
 }
 
 div.alert-todo > div:first-child::before {
-  font-family: 'Font Awesome 5 Free';
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #D7ADD0;
+  color: #d7add0;
   content: "\f0ae";
 }
 
@@ -209,7 +215,7 @@ div.alert > div {
 
 div.alert.alert-warning {
   color: #492a9e;
-  background-color: #FFE7ED;
+  background-color: #ffe7ed;
   border-top: 4pt solid #ff003f;
   border-radius: 0.5em;
   border-right-style: none;
@@ -221,7 +227,7 @@ div.alert.alert-warning {
 div.alert.alert-todo {
   color: #492a9e;
   background-color: #fff;
-  border-top: 4pt solid #D7ADD0;
+  border-top: 4pt solid #d7add0;
   border-radius: 0.5em;
   border-right-style: none;
   border-bottom-style: none;
@@ -231,7 +237,8 @@ div.alert.alert-todo {
 
 /* buttons */
 
-.btn.btn-sm, .btn-group-sm > .btn {
+.btn.btn-sm,
+.btn-group-sm > .btn {
   border-radius: 0rem; /*undo rounded corners*/
   font-size: 0.8rem;
 }
@@ -278,50 +285,50 @@ hr {
 }
 
 .center-block {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
- }
-
-.home-section.wg-experience .card-body {
-	padding: .5rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.home-section.wg-experience .card .card-text{
+.home-section.wg-experience .card-body {
+  padding: 0.5rem;
+}
+
+.home-section.wg-experience .card .card-text {
   padding: 0;
 }
 
 /* images more like cards; iframes more seamless */
 
 img {
-	margin-bottom: 1.5rem;
-	overflow: hidden;
-	background: #fff;
-	box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
 iframe {
-	border: 0;
+  border: 0;
 }
 
 /* pagination buttons */
 
 .page-link {
-	color: #492a9e;
-	background-color: #fff;
-	border: 1px solid #492a9e;
+  color: #492a9e;
+  background-color: #fff;
+  border: 1px solid #492a9e;
   border-radius: 0px; /*undo rounded corners*/
 }
 
 .page-link:hover {
-	color: #fff;
-	background-color: #492a9e;
-	border-color: #492a9e;
+  color: #fff;
+  background-color: #492a9e;
+  border-color: #492a9e;
 }
 
 .page-item:first-child .page-link,
 .page-item:last-child .page-link {
-	border-radius: 0.4rem;
+  border-radius: 0.4rem;
 }
 
 /* https://github.com/gcushen/hugo-academic/issues/147 */
@@ -344,44 +351,46 @@ iframe {
 }
 
 .carousel-indicators li {
-	background-color: #7c4dff80;
+  background-color: #7c4dff80;
 }
 
 .section-heading p {
-	color: #492a9e;
+  color: #492a9e;
 }
 
 /* For 2-column article layout with TOC on right */
 .article-container {
-	max-width: 900px;
+  max-width: 900px;
 }
 
 .col-lg-2ish {
-  flex:0 0 20%;
-  max-width:20%;
+  flex: 0 0 20%;
+  max-width: 20%;
   padding-right: 0px !important;
- }
+}
 
 .col-lg-10ish {
-  flex:0 0 80%;
-  max-width:80%;
- }
+  flex: 0 0 80%;
+  max-width: 80%;
+}
 
-#TableOfContents li a, .toc-top li a {
-	padding: .125rem .5rem;
-	font-size: .8rem;
-	color: #1a162d99;
+#TableOfContents li a,
+.toc-top li a {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.8rem;
+  color: #1a162d99;
 }
 
 #TableOfContents {
-	border-left: 1px solid #7c4dff3d;
+  border-left: 1px solid #7c4dff3d;
 }
 
 html {
-	scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
-html, body {
+html,
+body {
   scroll-padding-top: 100px;
 }
 
@@ -404,8 +413,8 @@ pre {
 
 a > svg.anchor-symbol {
   color: transparent;
-  margin-bottom: .5rem;
-  margin-left: .5rem;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
   fill: #1a162d99;
 }
 
