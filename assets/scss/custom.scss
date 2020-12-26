@@ -121,25 +121,28 @@ a:hover {
   letter-spacing: .08em;
 }
 
-
 /* code */
 /* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
 
 pre {
-  border: 0.1em solid rgb(151, 157, 167);
+  // border: 0.1em solid rgb(151, 157, 167);
   border-radius: 0.5em;
   display: block;
   margin-top: 0.5rem;
   margin-bottom: 1rem;
-  // padding: 0.25rem;
+  padding: 0.5rem;
   font-size: .9rem;
   line-height: 1.4;
   white-space: pre;
   white-space: pre-wrap;
   word-break: break-all;
   word-wrap: break-word;
-  background-color: #f5f5f5;
 }
+
+.hljs, pre {
+  background-color: #f1f3f4;
+}
+
 pre code {
   padding: 0;
   font-size: 1em;
@@ -193,7 +196,7 @@ div.alert-todo > div:first-child::before {
   color: inherit;
   background-color: #ffffff;
   border-top: 4pt solid #abb8c7;
-  border-radius: 4px; /*undo rounded corners*/
+  border-radius: 0.5em;
   border-right-style: 1pt solid;
   border-bottom-style: 1pt solid;
   border-left-style: 1pt solid;
@@ -201,15 +204,14 @@ div.alert-todo > div:first-child::before {
 }
 
 div.alert > div {
-  font-size: 0.85rem;
+  font-size: 0.9rem;
 }
-
 
 div.alert.alert-warning {
   color: #492a9e;
   background-color: #FFE7ED;
   border-top: 4pt solid #ff003f;
-  border-radius: 0px; /*undo rounded corners*/
+  border-radius: 0.5em;
   border-right-style: none;
   border-bottom-style: none;
   border-left-style: none;
@@ -220,7 +222,7 @@ div.alert.alert-todo {
   color: #492a9e;
   background-color: #fff;
   border-top: 4pt solid #D7ADD0;
-  border-radius: 0px; /*undo rounded corners*/
+  border-radius: 0.5em;
   border-right-style: none;
   border-bottom-style: none;
   border-left-style: none;
@@ -306,10 +308,9 @@ iframe {
 
 .page-link {
 	color: #492a9e;
-	background-color: #F0F7FA;
+	background-color: #fff;
 	border: 1px solid #492a9e;
   border-radius: 0px; /*undo rounded corners*/
-
 }
 
 .page-link:hover {
@@ -318,14 +319,9 @@ iframe {
 	border-color: #492a9e;
 }
 
-.page-item:first-child .page-link {
-	border-top-left-radius: 0rem;
-	border-bottom-left-radius: 0rem;
-}
-
+.page-item:first-child .page-link,
 .page-item:last-child .page-link {
-	border-top-right-radius: 0rem;
-	border-bottom-right-radius: 0rem;
+	border-radius: 0.4rem;
 }
 
 /* https://github.com/gcushen/hugo-academic/issues/147 */
@@ -388,7 +384,6 @@ html {
 html, body {
   scroll-padding-top: 100px;
 }
-
 
 /* --------Blog posts--------- */
 /* Headers within blogs */
