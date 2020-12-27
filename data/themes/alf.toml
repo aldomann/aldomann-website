@@ -5,12 +5,12 @@ name = "Alf"
 light = true
 
 # Primary
-primary = "#7c4dff"
+primary = "#473c8b"
 
 # Menu
-menu_primary = "#fff"
-menu_text = "#34495e"
-menu_text_active = "#4945E0"
+menu_primary = "#ffffff"
+menu_text = "#353535"
+menu_text_active = "#473c8b"
 menu_title = "#2b2b2b"
 
 # Home sections

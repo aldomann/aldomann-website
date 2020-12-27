@@ -1,12 +1,28 @@
+/* SASS variables */
+$primary-color: #473c8b;
+$active-color: #492a9e;
+$code-background: #f1f3f4;
+
+$font-color: #2b2b2b;
+$toc-font-color:  #1a162d99;
+
+$alert-warning-color: #ff003f;
+$alert-todo-color: #d7add0;
+$alert-note-color: #1c3249;
+$alert-note-border-color: #abb8c7;
+
+$white: #fff;
+$black: #000;
+
 /* Whole document: */
 
 body {
-  margin-top: 75px !important;
-  color: #172a3a;
+  margin-top: 80px !important;
+  color: $font-color;
 }
 
 .navbar {
-  min-height: 100px !important;
+  min-height: 80px !important;
 }
 
 h1,
@@ -17,7 +33,21 @@ h5,
 h6 {
   font-weight: 700;
   letter-spacing: 0.04em;
-  color: #172a3a;
+  color: $font-color;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
 }
 
 /* links */
@@ -25,14 +55,14 @@ h6 {
 a:active,
 a:focus,
 a:hover {
-  color: #492a9e;
+  color: $active-color;
 }
 
 /* nav */
 
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link:focus {
-  color: #7c4dff;
+  color: $primary-color;
 }
 
 .navbar {
@@ -73,7 +103,7 @@ a:hover {
   width: 0%;
   content: "."; /* make invisible, dot beneath links */
   color: transparent;
-  background: #7c4dff;
+  background: $primary-color;
   height: 2px;
 }
 
@@ -84,7 +114,7 @@ a:hover {
 /* home page */
 
 .portrait-title h2 {
-  color: #333;
+  color: $font-color;
 }
 
 #about .col-12.col-lg-8 {
@@ -144,9 +174,18 @@ pre {
   word-wrap: break-word;
 }
 
-.hljs,
-pre {
-  background-color: #f1f3f4;
+pre,
+.hljs {
+  background-color: $code-background;
+}
+
+pre,
+code {
+  font-weight: 400;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  border-radius: 0.2em;
+  background-color: $code-background;
 }
 
 pre code {
@@ -158,20 +197,20 @@ pre code {
 
 kbd {
   -moz-border-radius: 3px;
-  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset;
   -webkit-border-radius: 3px;
-  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset;
   background-color: #f7f7f7;
   border: 1px solid #ccc;
   border-radius: 3px;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px #fff inset;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset;
   color: inherit;
   display: inline-block;
   font-size: 0.85rem;
   line-height: 1.4;
   margin: 0 0.1em;
   padding: 0.1em 0.6em;
-  text-shadow: 0 1px 0 #fff;
+  text-shadow: 0 1px 0 $white;
 }
 
 /* alerts */
@@ -179,29 +218,29 @@ kbd {
 div.alert-note > div:first-child::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #4a6785;
+  color: $alert-note-color;
   content: "\f05a";
 }
 
 div.alert-warning > div:first-child::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #ff003f;
+  color: $alert-warning-color;
   content: "\f1e2";
 }
 
 div.alert-todo > div:first-child::before {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
-  color: #d7add0;
+  color: $alert-todo-color;
   content: "\f0ae";
 }
 
 .alert-note {
-  border-color: #abb8c7;
+  border-color: $alert-note-border-color;
   color: inherit;
-  background-color: #ffffff;
-  border-top: 4pt solid #abb8c7;
+  background-color: $white;
+  border-top: 4pt solid $alert-note-border-color;
   border-radius: 0.5em;
   border-right-style: 1pt solid;
   border-bottom-style: 1pt solid;
@@ -214,9 +253,9 @@ div.alert > div {
 }
 
 div.alert.alert-warning {
-  color: #492a9e;
-  background-color: #ffe7ed;
-  border-top: 4pt solid #ff003f;
+  color: $active-color;
+  background-color: $white;
+  border-top: 4pt solid $alert-warning-color;
   border-radius: 0.5em;
   border-right-style: none;
   border-bottom-style: none;
@@ -225,9 +264,9 @@ div.alert.alert-warning {
 }
 
 div.alert.alert-todo {
-  color: #492a9e;
-  background-color: #fff;
-  border-top: 4pt solid #d7add0;
+  color: $active-color;
+  background-color: $white;
+  border-top: 4pt solid $alert-todo-color;
   border-radius: 0.5em;
   border-right-style: none;
   border-bottom-style: none;
@@ -239,28 +278,30 @@ div.alert.alert-todo {
 
 .btn.btn-sm,
 .btn-group-sm > .btn {
-  border-radius: 0rem; /*undo rounded corners*/
+  border-radius: 0.3em;
   font-size: 0.8rem;
 }
 
 .btn.btn-outline-primary.my-1.mr-1 {
-  border-radius: 0px; /*undo rounded corners*/
+  border-radius: 0.3em;
   font-size: 0.8rem;
 }
 
 .btn {
-  font-family: Lora;
-  text-transform: lowercase;
-  font-style: italic;
+  font-family: Roboto;
+  // text-transform: lowercase;
+  // font-style: italic;
   border-radius: 0px;
 }
 
 .btn-toolbar .btn:first-child {
-  border-radius: 0px;
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
 }
 
 .btn-toolbar .btn:last-child {
-  border-radius: 0px;
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
 }
 
 .btn-toolbar {
@@ -280,7 +321,7 @@ div.universal-wrapper.pt-3 h1 {
 hr {
   border: 0;
   height: 1px;
-  background: #492a9e;
+  background: $active-color;
   background-image: none;
 }
 
@@ -303,7 +344,7 @@ hr {
 img {
   margin-bottom: 1.5rem;
   overflow: hidden;
-  background: #fff;
+  background: $white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -314,16 +355,16 @@ iframe {
 /* pagination buttons */
 
 .page-link {
-  color: #492a9e;
-  background-color: #fff;
-  border: 1px solid #492a9e;
+  color: $active-color;
+  background-color: $white;
+  border: 1px solid $active-color;
   border-radius: 0px; /*undo rounded corners*/
 }
 
 .page-link:hover {
-  color: #fff;
-  background-color: #492a9e;
-  border-color: #492a9e;
+  color: $white;
+  background-color: $active-color;
+  border-color: $active-color;
 }
 
 .page-item:first-child .page-link,
@@ -351,11 +392,11 @@ iframe {
 }
 
 .carousel-indicators li {
-  background-color: #7c4dff80;
+  background-color: rgba($primary-color, 128);
 }
 
 .section-heading p {
-  color: #492a9e;
+  color: $active-color;
 }
 
 /* For 2-column article layout with TOC on right */
@@ -378,11 +419,11 @@ iframe {
 .toc-top li a {
   padding: 0.125rem 0.5rem;
   font-size: 0.8rem;
-  color: #1a162d99;
+  color: $toc-font-color;
 }
 
 #TableOfContents {
-  border-left: 1px solid #7c4dff3d;
+  border-left: 1px solid rgba($primary-color, 61);
 }
 
 html {
@@ -400,8 +441,8 @@ body {
 .article-style h1:not(:first-child),
 .article-style h2:not(:first-child),
 .article-style h3:not(:first-child) {
-  padding-top: 2em;
-  padding-bottom: 1em;
+  padding-top: 0.75em;
+  padding-bottom: 0em;
 }
 
 /*---fix code scrolling-- */
@@ -415,10 +456,10 @@ a > svg.anchor-symbol {
   color: transparent;
   margin-bottom: 0.5rem;
   margin-left: 0.5rem;
-  fill: #1a162d99;
+  fill: $toc-font-color;
 }
 
 a > svg.anchor-symbol:hover {
-  fill: #7c4dff;
+  fill: $primary-color;
   transition: fill 0.6s ease;
 }
