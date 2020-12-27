@@ -341,10 +341,23 @@ hr {
 
 /* images more like cards; iframes more seamless */
 
+.badges img {
+  display: inline-block;
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  padding: 0rem;
+}
+
 img {
+  border-radius: 0.25rem;
   margin-bottom: 1.5rem;
   overflow: hidden;
-  background: $white;
+  // background: $white;
+  background: none;
+}
+
+.media.stream-item img,
+.article-style figure img {
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
 }
 
