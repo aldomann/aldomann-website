@@ -1,5 +1,5 @@
 /* SASS variables */
-$primary-color: #483e8d;
+$primary-color: #554b9d;
 $active-color: #492a9e;
 $code-background: #f1f3f4;
 
@@ -71,6 +71,11 @@ a:hover {
   letter-spacing: 0.1em;
   font-size: 1em;
   font-weight: 500;
+}
+
+.dark .navbar {
+  box-shadow: none;
+  background-color: #272935;
 }
 
 .navbar-brand {
@@ -438,6 +443,13 @@ iframe {
   padding: 0.125rem 0.5rem;
   font-size: 0.8rem;
   color: $toc-font-color;
+}
+
+.dark #TableOfContents li a,
+.dark .toc-top li a {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.8rem;
+  color: $white;
 }
 
 #TableOfContents {
