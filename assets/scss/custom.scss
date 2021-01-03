@@ -354,11 +354,19 @@ img {
   background: none;
 }
 
+.badges {
+  margin-bottom: 1rem !important;
+}
+
 .badges img {
   display: inline-block;
   margin-top: 0rem !important;
   margin-bottom: 0rem !important;
   padding: 0rem;
+}
+
+.badges p{
+  margin-bottom: 0rem !important;
 }
 
 .card .card-image {
