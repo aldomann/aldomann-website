@@ -25,16 +25,11 @@ url_video: ""
 slides: ""
 ---
 
-<div class="badges">
-
-  <!-- badges: start -->
+{{% badges %}}
   [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
   [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/biodosetools)](https://cran.r-project.org/package=biodosetools)
-  [![pkgdown Workflow
-Status](https://github.com/biodosetools-team/biodosetools/workflows/pkgdown/badge.svg)](https://biodosetools-team.github.io/biodosetools/)
-  <!-- badges: end -->
-
-</div>
+  [![pkgdown WorkflowStatus](https://github.com/biodosetools-team/biodosetools/workflows/pkgdown/badge.svg)](https://biodosetools-team.github.io/biodosetools/)
+{{% /badges %}}
 
 This project is an app to be used by biological dosimetry laboratories. Biodose Tools is an open source project that aims to be a tool to perform all different tests and calculations needed. The app is developed using the [R](https://www.r-project.org/about.html) programming language and [Shiny](https://shiny.rstudio.com) as a framework to offer an online, easy-to-use solution. Although the intention is to provide the application as a website, all R routines are available as an R package, which can be downloaded for improvement or personal use.
 
