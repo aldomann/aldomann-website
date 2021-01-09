@@ -1,6 +1,6 @@
 ---
 title: mariokart
-summary: Mario Kart character and vehicle statistics datasets from different games of the series.
+summary: Mario Kart character and vehicle statistics datasets.
 tags: [r-package]
 date: "2019-07-13T00:00:00Z"
 
@@ -53,7 +53,7 @@ Currently these entries have been implemented:
 
 <!-- And  -->
 
-You can install the development version from [GitHub](https://github.com/) with:
+The development version can be installed from [GitHub](https://github.com/) with:
 
 ``` r
 # install.packages("devtools")
@@ -90,7 +90,7 @@ mk8_characters %>%
   )
 ```
 
-<img src="example-mk8-1.png" style="display: block; margin: auto;" />
+{{< figure src="example-mk8-1.png" lightbox="false" class="noshadow" >}}
 
 This is an example which shows how to visually compare Mario Kart Wii karts statistics grouped by drifting type:
 
@@ -115,7 +115,7 @@ mkwii_vehicles %>%
   coord_flip()
 ```
 
-<img src="example-mkwii-1.png" style="display: block; margin: auto;" />
+{{< figure src="example-mkwii-1.png" lightbox="false" class="noshadow" >}}
 
 This is an example which shows a visual comparison of the best characters per weight class in Mario Kart Wii:
 
@@ -144,7 +144,7 @@ mkwii_characters %>%
   )
 ```
 
-<img src="example-mkwii-2-1.png" style="display: block; margin: auto;" />
+{{< figure src="example-mkwii-2-1.png" lightbox="false" class="noshadow" >}}
 
 A graph showing the speed as a function of time when accelerating from a
 standstill with various characters in Super Mario Kart:
@@ -168,4 +168,4 @@ smk_acceleration %>%
   )
 ```
 
-<img src="example-smk-1.png" style="display: block; margin: auto;" />
+{{< figure src="example-smk-1.png" lightbox="false" class="noshadow" >}}
