@@ -2,7 +2,7 @@
 title: Biodose Tools
 summary: Shiny App for biological dosimetry laboratories.
 tags: [biology, r-package]
-date: "2018-07-16T00:00:00Z"
+date: "2019-10-12T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -11,7 +11,7 @@ external_link: ""
 # - icon: twitter
 #   icon_pack: fab
 #   name: Follow
-#   url: https://twitter.com/georgecushen
+#   url: https://twitter.com/aldomann
 url_code: "https://github.com/biodosetools-team/biodosetools"
 url_pdf: ""
 url_slides: ""
