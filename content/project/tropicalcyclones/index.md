@@ -7,12 +7,12 @@ date: "2020-03-08T00:00:00Z"
 # Optional external URL for project (replaces project detail page).
 external_link: ""
 
-# links: ""
-# - icon: twitter
-#   icon_pack: fab
-#   name: Follow
-#   url: https://twitter.com/aldomann
-url_code: "https://github.com/aldomann/tropicalcyclones"
+links:
+- icon: github
+  icon_pack: fab
+  name: Code
+  url: https://github.com/aldomann/tropicalcyclones/
+url_code: ""
 url_pdf: ""
 url_slides: ""
 url_video: ""
