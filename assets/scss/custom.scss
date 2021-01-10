@@ -334,9 +334,9 @@ hr {
   margin-right: auto;
 }
 
-.home-section.wg-experience .card-body {
-  padding: 0.5rem;
-}
+// .home-section.wg-experience .card-body {
+//   padding: 0.5rem;
+// }
 
 .home-section.wg-experience .card .card-text {
   padding: 0;
@@ -415,6 +415,10 @@ iframe {
 .experience-image {
   max-width: 60px;
   margin-right: 10px;
+}
+
+.experience-image img {
+  margin-bottom: 0;
 }
 
 /* cards */
