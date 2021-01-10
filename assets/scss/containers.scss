@@ -1,0 +1,73 @@
+/* section headers */
+
+div.universal-wrapper.pt-3 h1 {
+  text-align: center;
+  padding-bottom: 50px;
+  text-transform: capitalize;
+}
+
+/* about-contact helpers */
+
+hr {
+  border: 0;
+  height: 1px;
+  background: $active-color;
+  background-image: none;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// .home-section.wg-experience .card-body {
+//   padding: 0.5rem;
+// }
+
+.home-section.wg-experience .card .card-text {
+  padding: 0;
+}
+
+/* https://github.com/gcushen/hugo-academic/issues/147 */
+
+// @media (min-width: 900px) {
+//   .navbar-expand-lg {
+//     flex-flow: row nowrap !important;
+//     justify-content: flex-start !important;
+//   }
+// }
+
+// @media (min-width: 900px) {
+//   .container-xl, .container-lg, .container-md, .container-sm, .container, .article-container {
+//     max-width: 900px !important;
+//   }
+// }
+
+.container {
+  max-width: 1000px;
+}
+
+.carousel-indicators li {
+  background-color: rgba($primary-color, 128);
+}
+
+.section-heading p {
+  color: $active-color;
+}
+
+/* For 2-column article layout with TOC on right */
+.article-container {
+  max-width: 1000px;
+}
+
+.col-lg-2ish {
+  flex: 0 0 20%;
+  max-width: 20%;
+  padding-right: 0px !important;
+}
+
+.col-lg-10ish {
+  flex: 0 0 80%;
+  max-width: 80%;
+}

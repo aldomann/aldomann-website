@@ -1,0 +1,57 @@
+/* code */
+/* https://github.com/rstudio/blogdown/blob/master/docs/02-hugo.Rmd */
+
+pre {
+  white-space: pre-wrap;
+  // border: 0.1em solid rgb(151, 157, 167);
+  border-radius: 0.5em;
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  white-space: pre;
+  white-space: pre-wrap;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+pre,
+.hljs {
+  background-color: $code-background;
+}
+
+pre,
+code {
+  font-weight: 400;
+  padding-left: 0.2rem;
+  padding-right: 0.2rem;
+  border-radius: 0.2em;
+  background-color: $code-background;
+}
+
+pre code {
+  padding: 0;
+  font-size: 1em;
+  color: inherit;
+  background-color: transparent;
+}
+
+kbd {
+  -moz-border-radius: 3px;
+  -moz-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset;
+  -webkit-border-radius: 3px;
+  -webkit-box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset;
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 0 0 2px $white inset;
+  color: inherit;
+  display: inline-block;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  margin: 0 0.1em;
+  padding: 0.1em 0.6em;
+  text-shadow: 0 1px 0 $white;
+}

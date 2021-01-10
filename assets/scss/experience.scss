@@ -1,0 +1,35 @@
+/* cv button */
+.wg-experience .section-heading a {
+  color: $primary-color;
+  border: solid 1px $primary-color;
+  border-radius: 0.3em;
+  font-size: 0.9rem;
+  padding: 5px .5rem 5px .5rem;
+  line-height: 1;
+}
+
+.wg-experience .section-heading a:hover {
+  background-color: $primary-color;
+  color: $white;
+  text-decoration: none;
+  transition: color 0.6s ease;
+}
+
+//add images to experience cards
+.flex-w-experience-image-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.flex-w-experience-text {
+  display: flex;
+  flex-direction: column;
+}
+.experience-image {
+  max-width: 60px;
+  margin-right: 10px;
+}
+
+.experience-image img {
+  margin-bottom: 0;
+}

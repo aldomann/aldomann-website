@@ -1,0 +1,28 @@
+/* Headers within blogs */
+
+.article-style h1:not(:first-child),
+.article-style h2:not(:first-child),
+.article-style h3:not(:first-child) {
+  padding-top: 0.75em;
+  padding-bottom: 0em;
+}
+
+/* table of contents */
+
+#TableOfContents li a,
+.toc-top li a {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.8rem;
+  color: $toc-font-color;
+}
+
+.dark #TableOfContents li a,
+.dark .toc-top li a {
+  padding: 0.125rem 0.5rem;
+  font-size: 0.8rem;
+  color: $white;
+}
+
+#TableOfContents {
+  border-left: 1px solid rgba($primary-color, 61);
+}

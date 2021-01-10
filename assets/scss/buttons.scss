@@ -1,0 +1,51 @@
+/* buttons */
+
+.btn.btn-sm,
+.btn-group-sm > .btn {
+  border-radius: 0.3em;
+  font-size: 0.8rem;
+}
+
+.btn.btn-outline-primary.my-1.mr-1 {
+  border-radius: 0.3em;
+  font-size: 0.8rem;
+}
+
+.btn {
+  font-family: Roboto;
+  border-radius: 0px;
+}
+
+.btn-toolbar .btn:first-child {
+  border-top-left-radius: 0.5em;
+  border-bottom-left-radius: 0.5em;
+}
+
+.btn-toolbar .btn:last-child {
+  border-top-right-radius: 0.5em;
+  border-bottom-right-radius: 0.5em;
+}
+
+.btn-toolbar {
+  justify-content: center;
+}
+
+/* pagination buttons */
+
+.page-link {
+  color: $active-color;
+  background-color: $white;
+  border: 1px solid $active-color;
+  border-radius: 0px; /*undo rounded corners*/
+}
+
+.page-link:hover {
+  color: $white;
+  background-color: $active-color;
+  border-color: $active-color;
+}
+
+.page-item:first-child .page-link,
+.page-item:last-child .page-link {
+  border-radius: 0.4rem;
+}

@@ -1,0 +1,42 @@
+/* images more like cards; iframes more seamless */
+
+img {
+  // border-radius: 0rem;
+  margin-bottom: 1.5rem;
+  overflow: hidden;
+  // background: $white;
+  background: none;
+}
+
+.badges {
+  margin-bottom: 1rem !important;
+}
+
+.badges img {
+  display: inline-block;
+  margin-top: 0rem !important;
+  margin-bottom: 0rem !important;
+  padding: 0rem;
+}
+
+.badges p{
+  margin-bottom: 0rem !important;
+}
+
+.card .card-image {
+  padding: 0.5rem;
+}
+
+.media.stream-item img,
+.article-style figure img {
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+iframe {
+  border: 0;
+}
+
+.noshadow img {
+  box-shadow: none !important;
+}

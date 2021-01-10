@@ -1,0 +1,57 @@
+/* whole document */
+
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  scroll-padding-top: 100px;
+}
+
+body {
+  margin-top: 80px !important;
+  color: $font-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: $font-color;
+}
+
+h1 {
+  font-size: 1.75rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  margin-top: 0.5rem;
+}
+
+h3 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* links */
+
+a:active,
+a:focus,
+a:hover {
+  color: $active-color;
+}
+
+/* anchor headings */
+
+a > svg.anchor-symbol {
+  color: transparent;
+  margin-bottom: 0.5rem;
+  margin-left: 0.5rem;
+  fill: $toc-font-color;
+}
+
+a > svg.anchor-symbol:hover {
+  fill: $primary-color;
+  transition: fill 0.6s ease;
+}
