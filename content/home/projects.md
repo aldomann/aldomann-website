@@ -31,6 +31,8 @@ content:
     tag: r-package
   - name: Biology
     tag: biology
+  - name: Design
+    tag: design
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
