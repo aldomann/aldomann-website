@@ -49,3 +49,9 @@
 .page-item:last-child .page-link {
   border-radius: 0.4rem;
 }
+
+/* project selector */
+
+.dark .btn-primary, .dark .btn.btn-primary.active {
+  color: $white;
+}
