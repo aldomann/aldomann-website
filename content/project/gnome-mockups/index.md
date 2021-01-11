@@ -1,9 +1,9 @@
 ---
 title: GNOME Mockups
 summary: Application mockups following GNOME's Human Interface Guidelines.
-tags: []
-date: "2018-12-24T00:00:00Z"
-lastmod: "2020-05-31T11:45:00Z"
+tags: [design]
+date: "2012-05-19T00:00:00Z"
+lastmod: "2016-04-24T11:45:00Z"
 draft: false
 
 # Optional external URL for project (replaces project detail page).
@@ -40,7 +40,6 @@ Application mockups. Mainly redesigns of popular apps following GNOME's Human In
 ## Nuvola Player
 
 - Created: 2012-05-19
-- Last update:
 - Upstream project: https://nuvola.tiliado.eu/
 - Implementation: https://www.omgubuntu.co.uk/2012/07/cloud-music-app-nuvola-prepping-new-look-features
 
@@ -64,7 +63,7 @@ Application mockups. Mainly redesigns of popular apps following GNOME's Human In
 ## Sigil
 
 - Created: 2014-09-28
-- Last update: 2016-24
+- Last update: 2016-04-24
 - Upstream project: https://sigil-ebook.com/
 
 {{< figure src="sigil-wire.png" title="Sigil Wireframe" lightbox="true" lightbox-group="mockups" >}}
