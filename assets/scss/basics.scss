@@ -55,3 +55,42 @@ a > svg.anchor-symbol:hover {
   fill: $primary-color;
   transition: fill 0.6s ease;
 }
+
+/* dark mode backgrounds */
+.dark .home-section {
+  background: $dark-back-a;
+}
+
+.dark .home-section:nth-of-type(even) {
+  background: $dark-back-b;
+}
+
+body.dark,
+.dark .docs-toc-link,
+.dark .docs-sidebar .nav > li:not(.active) > a,
+.dark .modal button.close,
+.dark input,
+.dark .form-control,
+.dark .form-control:focus {
+  background: $dark-back-a;
+}
+
+.dark .card {
+  background: $dark-card-back;
+}
+
+@media (max-width: 991.98px) {
+  .dark .navbar-collapse {
+    background-color: $dark-back-dropdown;
+  }
+}
+
+.dark .dropdown-item,
+.dark .dropdown-menu {
+  background-color: $dark-back-dropdown !important;
+}
+
+.dark .search-results,
+.dark .search-header {
+  background-color: $dark-back-a;
+}
