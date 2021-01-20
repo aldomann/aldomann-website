@@ -3,6 +3,7 @@ title: Paper Extra Icons
 summary: Custom icons for Paper Icon Theme by [Sam Hewitt](http://snwh.org/).
 tags: [design]
 date: "2015-11-19T00:00:00Z"
+lastmod: "2018-09-24T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""

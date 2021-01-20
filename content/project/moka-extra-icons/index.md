@@ -3,6 +3,7 @@ title: Moka Extra Icons
 summary: Custom icons for Moka Icon Theme by [Sam Hewitt](http://snwh.org/).
 tags: [design]
 date: "2014-07-18T00:00:00Z"
+lastmod: "2020-12-17T00:00:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
