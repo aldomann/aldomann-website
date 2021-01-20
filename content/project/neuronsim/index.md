@@ -3,6 +3,7 @@ title: neuronsim
 summary: Simulate the dynamics of neuronal ensembles.
 tags: [biology, r-package]
 date: "2020-11-20T00:00:00Z"
+lastmod: "2021-01-20T23:15:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -26,7 +27,8 @@ slides: ""
 ---
 
 {{% badges %}}
-  [![lifecycle](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://www.tidyverse.org/lifecycle/#experimental)
+  [![CRAN\_Status\_Badge](https://www.r-pkg.org/badges/version/neuronsim)](https://cran.r-project.org/package=neuronsim)
+  [![lifecycle](https://img.shields.io/badge/lifecycle-maturing-blue.svg)](https://www.tidyverse.org/lifecycle/#maturing)
 {{% /badges %}}
 
 The goal of `{neuronsim}` is to simulate the dynamics of neuronal ensembles using the model of FREs and QIF neurons.
@@ -42,24 +44,43 @@ devtools::install_github("aldomann/neuronsim")
 
 ## Examples
 
-The macroscopic dynamics of neuronal ensembles can be described by solving the firing-rate equations (FREs):
-
-``` r
+```r
 library(neuronsim)
 
+init_state <- c(r = 0, v = -2)
+params <- c(delta = 1, etabar = -2.5, J = 10.5)
+times_seq <- seq(from = -10, to = 80, by = 0.0001)
+current <- sin_input(t, current = 3, frequency = pi / 20)
+```
+
+The macroscopic dynamics of neuronal ensembles can be described by solving the firing-rate equations (FREs):
+
+```r
 fre_output <- solve_fre(
-  params = c(delta = 1, etabar = -2.5, J = 10.5),
-  init_state = c(r = 0, v = -2),
-  times = seq(from = -10, to = 80, by = 0.01),
-  input = sin_input(t, current = 3, frequency = pi/20),
+  params = params,
+  init_state = init_state,
+  times = times_seq,
+  input = current,
   method = "rk4"
 )
 ```
 
-To plot the macroscopic dynamics described by the FREs we can run
+The microscopic dynamics of neuronal ensembles can be described by running a QIF neurons simulation:
 
-``` r
-plot_macro_dynamics(fre_output)
+```r
+qif_output <- simulate_qif(
+  params = params,
+  init_state = init_state,
+  times = times_seq,
+  input = current(times_seq)
+)
 ```
 
-{{< figure src="sin_macro_dynamics-1.png" lightbox="false" class="noshadow" >}}
+To plot the macroscopic and microscopic dynamics of the ensemble we can run:
+
+```r
+list(fre_output, qif_output$data) %>%
+  plot_dynamics()
+```
+
+{{< figure src="sin_dynamics-1.png" lightbox="false" class="noshadow" >}}
