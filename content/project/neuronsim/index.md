@@ -3,7 +3,7 @@ title: neuronsim
 summary: Simulate the dynamics of neuronal ensembles.
 tags: [biology, r-package]
 date: "2020-11-20T00:00:00Z"
-lastmod: "2021-01-20T23:15:00Z"
+lastmod: "2021-01-21T00:16:00Z"
 
 # Optional external URL for project (replaces project detail page).
 external_link: ""
@@ -48,9 +48,9 @@ devtools::install_github("aldomann/neuronsim")
 library(neuronsim)
 
 init_state <- c(r = 0, v = -2)
-params <- c(delta = 1, etabar = -2.5, J = 10.5)
-times_seq <- seq(from = -10, to = 80, by = 0.0001)
-current <- sin_input(t, current = 3, frequency = pi / 20)
+params <- c(delta = 1, etabar = -5, J = 15)
+times_seq <- seq(from = -10, to = 40, by = 0.001)
+current <- constant_input(t, current = 3, t_start = 0, t_end = 30)
 ```
 
 The macroscopic dynamics of neuronal ensembles can be described by solving the firing-rate equations (FREs):
@@ -78,9 +78,11 @@ qif_output <- simulate_qif(
 
 To plot the macroscopic and microscopic dynamics of the ensemble we can run:
 
-```r
-list(fre_output, qif_output$data) %>%
-  plot_dynamics()
+```{r sin-dynamics, fig.width=8, fig.height=4}
+plot_dynamics(
+  data = list(fre_output, qif_output$data),
+  raster_data = qif_output$raster
+)
 ```
 
-{{< figure src="sin_dynamics-1.png" lightbox="false" class="noshadow" >}}
+{{< figure src="sin-dynamics-1.png" lightbox="false" class="noshadow" >}}
