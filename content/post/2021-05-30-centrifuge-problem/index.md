@@ -4,8 +4,8 @@ subtitle: ""
 summary: "Linguist is the library used on GitHub.com to detect blob languages, ignore binary or vendored files, suppress generated files in diffs, and generate language breakdown graphs."
 authors: [admin]
 
-tags: [programming,mathematica]
-categories: [tech]
+tags: [programming, mathematica]
+categories: [science]
 projects: []
 
 date: "2021-05-30T00:00:00Z"
@@ -17,9 +17,15 @@ image:
   caption: ""
   focal_point: ""
   preview_only: true
+
+links:
+- icon: github
+  icon_pack: fab
+  name: Code
+  url: https://github.com/aldomann/the-centrifuge-problem/
 ---
 
-A while ago (almost 3 years ago) I watched a video on [Numberphile](https://www.youtube.com/channel/UCoxcjq-8xIDTYp3uz647V5A) where [Dr Holly Krieger](https://twitter.com/hollykrieger) presents the following problem.
+A while ago (almost 3 years ago, to be more exact) I watched a video on [Numberphile](https://www.youtube.com/channel/UCoxcjq-8xIDTYp3uz647V5A) where [Dr Holly Krieger](https://twitter.com/hollykrieger) presents the following problem.
 
 > Given a centrifuge with $n$ holes, is it possible to balance $k$ test tubes?
 
@@ -47,6 +53,14 @@ For simplicity, if we take $z = 1$, then the roots become of the form $1$, $\ome
 
 As an exercise to refresh my Mathematica programming and graphing skills, I decided to solve this problem using [Wolfram Mathematica](https://www.wolfram.com/mathematica/).
 
+The problem, from a computational point of view, can be divided into main the following problems:
+
+- Find the set of roots, $R$.
+- Find all possible subsets $S \subseteq R$.
+- Check which subsets are valid solutions.
+
+### Finding the roots
+
 ```mathematica
 MyFindRoots[z_, n_] := Module[{roots, r, angle},
   roots = ConstantArray[0, n];
@@ -65,3 +79,8 @@ A much faster alternative to `MyFindRoots` would be to use the `Solve` function:
 ```mathematica
 MyFindRootsNative[z_, n_] := Solve[x^n == z, x][[All, 1, 2]]
 ```
+
+### Finding the valid subsets
+
+
+### Reducing the solutions
