@@ -8,10 +8,10 @@ tags: [programming, mathematica]
 categories: [science]
 projects: []
 
-date: "2021-05-30T00:00:00Z"
-lastmod: "2021-05-30T00:00:00Z"
+date: "2021-06-01T00:00:00Z"
+lastmod: "2021-06-01T00:00:00Z"
 featured: false
-draft: false
+draft: true
 
 image:
   caption: ""
