@@ -11,7 +11,7 @@ projects: []
 date: "2021-06-01T00:00:00Z"
 lastmod: "2021-06-01T00:00:00Z"
 featured: false
-draft: true
+draft: false
 
 image:
   caption: ""
@@ -47,7 +47,11 @@ $$
 
 where $(\eta\omega^{j})^{n} = z$, $\forall j \in \left\\{ 0, 1, 2, \dots, n - 1 \right\\}$, $k \leq n \in \mathbb{Z}$, and $z \in \mathbb{C}$.
 
-For simplicity, if we take $z = 1$, then the roots become of the form $1$, $\omega$, $\omega^{2}$, ..., $\omega^{n-1}$, with $\omega = e^{\frac{2\pi i}{n}}$. This is a fairly simple computational problem to solve if we brute force it, which is exactly what I did.
+For simplicity, if we take $z = 1$, then the roots become of the form $1$, $\omega$, $\omega^{2}$, ..., $\omega^{n-1}$, with $\omega = e^{\frac{2\pi i}{n}}$. This is illustrated for $n = 5$ in the figure below.
+
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/4/40/One5Root.svg" title="The 5th roots of unity (blue points) in the complex plane, from [Wikipedia](https://en.wikipedia.org/wiki/Root_of_unity)" lightbox=false class="noshadow" width="40%" >}}
+
+Finding roots of unity ($z = 1$) and checking subsets that add up to zero is fairly simple computational problem to solve if we brute force it, which is exactly what I did.
 
 ## Computational solution
 
@@ -61,6 +65,8 @@ The problem, from a computational point of view, can be divided into main the fo
 
 ### Finding the roots
 
+Finding the $n$ roots of a complex number $z$ is a very easy task to do using a loop:
+
 ```mathematica
 MyFindRoots[z_, n_] := Module[{roots, r, angle},
   roots = ConstantArray[0, n];
@@ -68,19 +74,122 @@ MyFindRoots[z_, n_] := Module[{roots, r, angle},
     r := Abs[z],
     angle := Arg[z],
     r = r^(1 / n),
-    roots[[k + 1]] = r * Exp[I * (angle + 2 * Pi * k)/n]
+    roots[[k + 1]] = r * Exp[I * (angle + 2 * Pi * k) / n]
     }];
   roots
 ]
 ```
 
-A much faster alternative to `MyFindRoots` would be to use the `Solve` function:
+As an example, we can find the 5th roots of unity shown in the previous section:
+
+```mathematica
+MyFindRoots[1, 5]
+```
+```text
+{1, E^((2 I Pi)/5), E^((
+ 4 I Pi)/5), E^(-((4 I Pi)/5)), E^(-((2 I Pi)/5))}
+```
+
+A native alternative to `MyFindRoots` would be to use the `Solve` function:
 
 ```mathematica
 MyFindRootsNative[z_, n_] := Solve[x^n == z, x][[All, 1, 2]]
 ```
 
-### Finding the valid subsets
+However, this function is slower in the range of $n$ we would solve the problem for (let me know if you find a centrifuge with 1000 holes):
+```mathematica
+Needs["GeneralUtilities`"]
+f1 = MyFindRoots[1, #] &;
+f2 = MyFindRootsNative[1, #] &;
+BenchmarkPlot[{f1, f2}, # &, PowerRange[1, 1000], "IncludeFits" -> True]
+```
 
+{{< figure src="benchmark.png" title="Benchmarking results of `MyFindRoots` compared to `MyFindRootsNative`" lightbox=false class="noshadow" width="80%" >}}
+
+For this reason, we would choose `MyFindRoots` over the `Solve`-powered `MyFindRootsNative` function.
+
+### Finding the subsets
+
+One of the awesome things about Mathematica is that operations in set theory are trivial. To get all subset $S \subseteq R$ we can run, for example,
+
+```mathematica
+RootsSetR := MyFindRoots[1, 4]
+RootSubsetsS = Subsets[RootsSetR, Length[RootsSetR]]
+```
+which results in the list of all possible $2^{n}$ subsets:
+```text
+{{}, {1}, {I}, {-1}, {-I}, {1, I}, {1, -1}, {1, -I}, {I, -1}, {I, -I}, {-1, -I}, {1, I, -1}, {1, I, -I}, {1, -1, -I}, {I, -1, -I}, {1, I, -1, -I}}
+```
+
+### Checking valid subsets
+
+The problem here will be, thus, checking if the solutions are valid. To calculate the sum of all elements of each subset $i$ of the family of subsets of $S$, we can simply do
+```mathematica
+RootSubsetsS[[7]]
+Total[RootSubsetsS[[7]]]
+```
+```text
+{1, -1}
+0
+```
+
+This example shows that, for $n=4$, one particular valid solution would be {1, -1}, that is two holes opposite to each other.
+
+Taking all this into account, a simple function to find all possible solutions can be the following:
+```mathematica
+FindCentrifugeSols[n_] := Module[{solutions, roots, subsets, subset, total, epsilon, i},
+  roots = UsedFindRoots[1, n];
+  subsets := Subsets[roots, n];
+  epsilon = Power[10, -15];
+  solutions = {};
+  (*Main loop*)
+  For[i = 1, i <= Length[subsets], i++, {
+    subset = subsets[[i]],
+    total = Total[subset],
+    If[Abs[N[total]] < epsilon,
+      solutions = Append[solutions, subset]
+    ]
+  }];
+  (*Return*)
+  {roots, solutions}
+]
+```
+
+Let's see it action (note that it returns the set of roots $R$, and family of valid subsets $S$):
+```mathematica
+FindCentrifugeSols[4]
+```
+```text
+{
+  {-1, -I, I, 1},
+  {{}, {-1, 1}, {-I, I}, {-1, -I, I, 1}}
+}
+```
+
+To better visualise the solutions, I wrote a function[^fn1] to draw the centrifuge configurations:
+```mathematica
+DrawCentrifugeSols[4]
+```
+
+{{< figure src="sols_4_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=4$"lightbox=false class="noshadow" width="250px" >}}
+
+An obvious thing to notice here is that for $k = 2$, the two found solutions are not unique under rotation. This may not seem like a big deal, but for larger values of $n$, the solution space is littered with non-unique solutions under rotation:
+
+{{< figure src="sols_12_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=12$"lightbox=false class="noshadow" >}}
+
+Here's where things get a bit more complicated.
 
 ### Reducing the solutions
+
+Although we've already solved the problem
+
+```mathematica
+SortSetClockwise[set_] := Module[{angles, order},
+  angles = Map[Arg, set];
+  order = Ordering[angles, All, NumericalOrder];
+  angles = angles[[order]];
+  Map[Exp, I * Pi * Rationalize[N[angles] / Pi]]
+]
+```
+
+[^fn1]: The full code can be found on https://github.com/aldomann/the-centrifuge-problem/
