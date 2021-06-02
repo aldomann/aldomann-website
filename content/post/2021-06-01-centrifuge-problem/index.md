@@ -38,7 +38,7 @@ On the video Dr Krieger goes over her thinking process, and some of the intuitiv
 The main takeaway, for me, is this problem can be thought of as finding the subset $S$, of the set $R$ of roots of a complex number $z$, such that their sum is zero:
 
 $$
-  \sum_{i = 1}^{k} s_{i} = 0,
+  \sum_{i = 1}^{\\#S} s_{i} = 0,
   \quad \text{where} \\; s_{i} \in S \subseteq R,
   \quad \text{given} \\;
   R = \left\\{\eta\omega^{0}, \eta\omega^{1}, \eta\omega^{2}, \dots, \eta\omega^{n-1} \right\\}
@@ -47,9 +47,9 @@ $$
 
 where $(\eta\omega^{j})^{n} = z$, $\forall j \in \left\\{ 0, 1, 2, \dots, n - 1 \right\\}$, $k \leq n \in \mathbb{Z}$, and $z \in \mathbb{C}$.
 
-For simplicity, if we take $z = 1$, then the roots become of the form $1$, $\omega$, $\omega^{2}$, ..., $\omega^{n-1}$, with $\omega = e^{\frac{2\pi i}{n}}$. This is illustrated for $n = 5$ in the figure below.
+For simplicity, if we take $z = 1$, then the roots become of the form {$1$, $\omega$, $\omega^{2}$, ..., $\omega^{n-1}$}, with $\omega = e^{\frac{2\pi i}{n}}$. This is illustrated for $n = 5$ in the figure below.
 
-{{< figure src="https://upload.wikimedia.org/wikipedia/commons/4/40/One5Root.svg" title="The 5th roots of unity (blue points) in the complex plane, from [Wikipedia](https://en.wikipedia.org/wiki/Root_of_unity)" lightbox=false class="noshadow" width="40%" >}}
+{{< figure src="https://upload.wikimedia.org/wikipedia/commons/4/40/One5Root.svg" title="The 5th roots of unity (blue points) in the complex plane, from [Wikipedia](https://en.wikipedia.org/wiki/Root_of_unity)" lightbox="false" class="noshadow" width="40%" >}}
 
 Finding roots of unity ($z = 1$) and checking subsets that add up to zero is fairly simple computational problem to solve if we brute force it, which is exactly what I did.
 
@@ -104,7 +104,7 @@ f2 = MyFindRootsNative[1, #] &;
 BenchmarkPlot[{f1, f2}, # &, PowerRange[1, 1000], "IncludeFits" -> True]
 ```
 
-{{< figure src="benchmark.png" title="Benchmarking results of `MyFindRoots` compared to `MyFindRootsNative`" lightbox=false class="noshadow" width="80%" >}}
+{{< figure src="benchmark.png" title="Benchmarking results of `MyFindRoots` compared to `MyFindRootsNative`" lightbox="false" class="noshadow" width="80%" >}}
 
 For this reason, we would choose `MyFindRoots` over the `Solve`-powered `MyFindRootsNative` function.
 
@@ -171,11 +171,11 @@ To better visualise the solutions, I wrote a function[^fn1] to draw the centrifu
 DrawCentrifugeSols[4]
 ```
 
-{{< figure src="sols_4_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=4$"lightbox=false class="noshadow" width="250px" >}}
+{{< figure src="sols_4_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=4$" lightbox="true" lightbox-group="solutions-n4" class="noshadow" width="250px" >}}
 
 An obvious thing to notice here is that for $k = 2$, the two found solutions are not unique under rotation. This may not seem like a big deal, but for larger values of $n$, the solution space is littered with non-unique solutions under rotation:
 
-{{< figure src="sols_12_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=12$"lightbox=false class="noshadow" >}}
+{{< figure src="sols_12_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=12$" lightbox="true" lightbox-group="solutions-n12" class="noshadow" >}}
 
 Here's where things get a bit more complicated.
 
@@ -193,7 +193,16 @@ The gist of this step is that we need to rotate all solutions and compare them t
 RotateSol[n_, k_, sol_] := sol * Exp[I * (2 * Pi * k) / n]
 ```
 
-This function simply applies a rotation of $(2 \pi k)/n$ to a complex number. This is essential to reduce the found solutions to unique solutions under a rotation symmetry.
+```mathematica
+RotateSol[4, 1, {I, 1, -I, -1}]
+RotateSol[4, 4, {I, 1, -I, -1}]
+```
+```text
+{-1, I, 1, -I}
+{I, 1, -I, -1}
+```
+
+This function simply applies a rotation of $(2 \pi k)/n$ to a complex number. This is essential to reduce the found solutions to unique solutions under rotations. Notice that this $k$ is not the amount of test tubes.
 
 ```mathematica
 SortSetClockwise[set_] := Module[{angles, order},
@@ -202,6 +211,15 @@ SortSetClockwise[set_] := Module[{angles, order},
   angles = angles[[order]];
   Map[Exp, I * Pi * Rationalize[N[angles] / Pi]]
 ]
+```
+
+```mathematica
+SortSetClockwise[{I, 1, -I, -1}]
+SortSetClockwise[{-I, 1, I, -1}]
+```
+```text
+{-I, 1, I, -1}
+{-I, 1, I, -1}
 ```
 
 This step is probably the most important one to minimise calculations. Since we'll be comparing solutions in set form as a whole, we need to make sure they follow a specific, deterministic structure.
@@ -235,6 +253,18 @@ ClassifyCentrifugeSols[n_] := Module[{MyMat, MyVect, roots, subsets, subset, eps
   {roots, MyMat}
 ]
 ```
+
+```mathematica
+ClassifyCentrifugeSols[4]
+```
+```text
+{
+  {-1, -I, I, 1},
+  {{0, {{}}},{2, {{1, -1}, {-I, I}}},{4, {{-I, 1, I, -1}}}}
+}
+```
+
+The purpose of this step is to classify solutions by $k$ (that is, by the amount of test tubes). This is important to make sure at no point we compare {-$i$, 1, $i$, -1} with {1, -1}.
 
 If we put all of this together, we can write the following function:
 ```mathematica
@@ -284,12 +314,39 @@ Likewise, I wrote `DrawCentrifugeUniqueSols` to draw the solutions to `ReduceCen
 DrawCentrifugeUniqueSols[4]
 ```
 
-{{< figure src="sols_4_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=4$"lightbox=false class="noshadow" width="200px">}}
+{{< figure src="sols_4_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=4$" lightbox="true" lightbox-group="solutions-n4" class="noshadow" width="200px">}}
 
-{{< figure src="sols_12_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=12$"lightbox=false class="noshadow" width="450px">}}
+As we can see, this step of reducing solutions by rotating and comparing them to each other removed {$i$, $-i$} as a duplicate of {1, -1} for $n = 4$, $k = 2$.
 
-### Going further
+This improvement becomes super clear when we solve for $n = 12$, as we go from 100 solutions to only 19:
 
-One minor issue I've noticed with my `ReduceCentrifugeSols` method is that it doesn't reduce solutions that are the same under reflections. This is an issue I may address in the future, but for now I'm happy with my method.
+{{< figure src="sols_12_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=12$" lightbox="true" lightbox-group="solutions-n12" class="noshadow" width="450px">}}
+
+## Going further
+
+### Improvement A
+
+One minor issue I've noticed with my `ReduceCentrifugeSols` method is that it doesn't reduce solutions that are the same under reflections (for instance, $n = 12$ has 18 unique solutions, as two of them for $k = 6$ are the same). This is an issue I may address in the future, but for now I'm happy with my method.
+
+### Improvement B
+
+Another point I'd like to work on in the future is to rewrite the code to use pipes (`RightComposition`), so that functions can be properly composed:
+```mathematica
+12 // FindCentrifugeSols // DrawCentrifugeUniqueSols
+```
+
+or
+
+```mathematica
+12 // FindCentrifugeSols // ReduceRotations //DrawCentrifugeUniqueSols
+```
+
+### Improvement C
+
+Another issue with this method is that the computation time scales exponentially as $n$ grows. I think by imposing the following condition:
+
+> A solution is valid if and only if both the number of test tubes, $k$, and the number of empty spots, $n - k$, can be expressed as sums of prime factors of $n$
+
+we would be able to remove the step of checking totals, $\sum s_{i} = 0$, altogether.
 
 [^fn1]: The full code can be found on https://github.com/aldomann/the-centrifuge-problem/.
