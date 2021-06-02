@@ -9,7 +9,7 @@ categories: [science]
 projects: []
 
 date: "2021-06-01T00:00:00Z"
-lastmod: "2021-06-01T00:00:00Z"
+lastmod: "2021-06-02T00:00:00Z"
 featured: false
 draft: false
 
@@ -62,6 +62,10 @@ The problem, from a computational point of view, can be divided into main the fo
 - Find the set of roots, $R$.
 - Find all possible subsets $S \subseteq R$.
 - Check which subsets are valid solutions.
+
+{{% callout note %}}
+I developed this code back in February-March 2019. I just never found the time to sit down and write about it.
+{{% /callout %}}
 
 ### Finding the roots
 
