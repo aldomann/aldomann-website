@@ -71,8 +71,8 @@ Finding the $n$ roots of a complex number $z$ is a very easy task to do using a 
 MyFindRoots[z_, n_] := Module[{roots, r, angle},
   roots = ConstantArray[0, n];
   For[k = 0, k < n, k++, {
-    r := Abs[z],
-    angle := Arg[z],
+    r = Abs[z],
+    angle = Arg[z],
     r = r^(1 / n),
     roots[[k + 1]] = r * Exp[I * (angle + 2 * Pi * k) / n]
     }];
@@ -139,7 +139,7 @@ Taking all this into account, a simple function to find all possible solutions c
 ```mathematica
 FindCentrifugeSols[n_] := Module[{solutions, roots, subsets, subset, total, epsilon, i},
   roots = UsedFindRoots[1, n];
-  subsets := Subsets[roots, n];
+  subsets = Subsets[roots, n];
   epsilon = Power[10, -15];
   solutions = {};
   (*Main loop*)
@@ -181,7 +181,19 @@ Here's where things get a bit more complicated.
 
 ### Reducing the solutions
 
-Although we've already solved the problem
+Up to this point, we've already *solved* the Centrifuge Problem. However, we want to reduce the solutions to truly unique configurations of a centrifuge.
+
+The gist of this step is that we need to rotate all solutions and compare them to each other to get rid of duplicated ones. To accomplish this, we will introduce a set of auxiliary functions:
+
+- `RotateSol`.
+- `SortSetClockwise`.
+- `ClassifyCentrifugeSols`.
+
+```mathematica
+RotateSol[n_, k_, sol_] := sol * Exp[I * (2 * Pi * k) / n]
+```
+
+This function simply applies a rotation of $(2 \pi k)/n$ to a complex number. This is essential to reduce the found solutions to unique solutions under a rotation symmetry.
 
 ```mathematica
 SortSetClockwise[set_] := Module[{angles, order},
@@ -192,4 +204,92 @@ SortSetClockwise[set_] := Module[{angles, order},
 ]
 ```
 
-[^fn1]: The full code can be found on https://github.com/aldomann/the-centrifuge-problem/
+This step is probably the most important one to minimise calculations. Since we'll be comparing solutions in set form as a whole, we need to make sure they follow a specific, deterministic structure.
+
+```mathematica
+ClassifyCentrifugeSols[n_] := Module[{MyMat, MyVect, roots, subsets, subset, epsilon, solutions, curr, next, i},
+  solutions = FindCentrifugeSols[n];
+  subsets = Sort[solutions[[2]]];
+  roots = solutions[[1]];
+  epsilon = Power[10, -15];
+  MyMat = {};
+  MyVect = {};
+  (*Main loop*)
+  For[i = 1, i <= Length[subsets], i++, {
+    subset = subsets[[i]],
+    curr = Length[subset];
+    (*Check length of next element*)
+    If[i + 1 <= Length[subsets],
+      next = Length[subsets[[i + 1]]],
+      next = 0
+    ];
+    (*Append subset to vector*)
+    MyVect = Append[MyVect, SortSetClockwise[subset]];
+    (*Append subsets to matrix*)
+    If[next != Length[subset] && Length[MyVect] > 0,
+      MyMat = Append[MyMat, {curr, MyVect}];
+      MyVect = {};
+    ];
+  }];
+  (*Return*)
+  {roots, MyMat}
+]
+```
+
+If we put all of this together, we can write the following function:
+```mathematica
+ReduceCentrifugeSols[n_] := Module[{Sols, SubSols, UniqueSubSols, UniqueSols, MyLength, permuteSolsBool, RotatedSol, RotatedSols, Sol, Add, element, i},
+  Sols = ClassifyCentrifugeSols[n];
+  MyLength = Length[Sols[[2]]];
+  UniqueSols = {};
+  (*Iterate over each subset size*)
+  For[i = 1, i <= MyLength, i++,
+    UniqueSubSols = {};
+    SubSols = Sols[[2]][[i]][[2]];
+    (*Loop over solution sub-space*)
+    For[element = 1, element <= Length[SubSols], element++,
+      RotatedSols = {};
+      Sol = SubSols[[element]];
+      Sol = SortSetClockwise[Sol];
+      (*Rotate one solution*)
+      For[k = 0, k < n, k++,
+        RotatedSol = RotateSol[n, k, Sol];
+        RotatedSol = SortSetClockwise[RotatedSol];
+        RotatedSols = Append[RotatedSols, RotatedSol]
+      ];
+      (*Add to list of unique solutions*)
+      If[Length[Intersection[UniqueSubSols, RotatedSols]] == 0,
+        UniqueSubSols = Append[UniqueSubSols, Sol];
+      ]
+    ];
+    UniqueSols = Append[UniqueSols, {Sols[[2]][[i]][[1]], UniqueSubSols}];
+  ];
+  (*Return*)
+  {Sols[[1]], UniqueSols}
+]
+```
+
+```mathematica
+ReduceCentrifugeSols[4]
+```
+```text
+{
+  {-1, -I, I, 1},
+  {{0, {{}}}, {2, {{1, -1}}}, {4, {{-I, 1, I, -1}}}}
+}
+```
+
+Likewise, I wrote `DrawCentrifugeUniqueSols` to draw the solutions to `ReduceCentrifugeSols`:
+```mathematica
+DrawCentrifugeUniqueSols[4]
+```
+
+{{< figure src="sols_4_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=4$"lightbox=false class="noshadow" width="200px">}}
+
+{{< figure src="sols_12_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=12$"lightbox=false class="noshadow" width="450px">}}
+
+### Going further
+
+One minor issue I've noticed with my `ReduceCentrifugeSols` method is that it doesn't reduce solutions that are the same under reflections. This is an issue I may address in the future, but for now I'm happy with my method.
+
+[^fn1]: The full code can be found on https://github.com/aldomann/the-centrifuge-problem/.
