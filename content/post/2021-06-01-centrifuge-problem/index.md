@@ -1,7 +1,7 @@
 ---
 title: "The Centrifuge Problem"
 subtitle: ""
-summary: "Linguist is the library used on GitHub.com to detect blob languages, ignore binary or vendored files, suppress generated files in diffs, and generate language breakdown graphs."
+summary: "Given a centrifuge with n holes, is it possible to balance k test tubes? My solution of the Centrifuge Problem using Wolfram Mathematica."
 authors: [admin]
 
 tags: [programming, mathematica]
@@ -9,7 +9,7 @@ categories: [science]
 projects: []
 
 date: "2021-06-01T00:00:00Z"
-lastmod: "2021-06-02T00:00:00Z"
+lastmod: "2021-06-03T10:00:00Z"
 featured: false
 draft: false
 
@@ -175,11 +175,11 @@ To better visualise the solutions, I wrote a function[^fn1] to draw the centrifu
 DrawCentrifugeSols[4]
 ```
 
-{{< figure src="sols_4_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=4$" lightbox="true" lightbox-group="solutions-n4" class="noshadow" width="250px" >}}
+{{< figure src="sols_4_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=4$" lightbox="true" lightbox-group="solutions-n4" class="noshadow img-no-radius" width="250px" >}}
 
 An obvious thing to notice here is that for $k = 2$, the two found solutions are not unique under rotation. This may not seem like a big deal, but for larger values of $n$, the solution space is littered with non-unique solutions under rotation:
 
-{{< figure src="sols_12_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=12$" lightbox="true" lightbox-group="solutions-n12" class="noshadow" >}}
+{{< figure src="sols_12_nonunique.png" title="Non-unique solutions for the Centrifuge Problem for $n=12$" lightbox="true" lightbox-group="solutions-n12" class="noshadow img-no-radius" >}}
 
 Here's where things get a bit more complicated.
 
@@ -318,13 +318,13 @@ Likewise, I wrote `DrawCentrifugeUniqueSols` to draw the solutions to `ReduceCen
 DrawCentrifugeUniqueSols[4]
 ```
 
-{{< figure src="sols_4_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=4$" lightbox="true" lightbox-group="solutions-n4" class="noshadow" width="200px">}}
+{{< figure src="sols_4_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=4$" lightbox="true" lightbox-group="solutions-n4" class="noshadow img-no-radius" width="200px">}}
 
 As we can see, this step of reducing solutions by rotating and comparing them to each other removed {$i$, $-i$} as a duplicate of {1, -1} for $n = 4$, $k = 2$.
 
 This improvement becomes super clear when we solve for $n = 12$, as we go from 100 solutions to only 19:
 
-{{< figure src="sols_12_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=12$" lightbox="true" lightbox-group="solutions-n12" class="noshadow" width="450px">}}
+{{< figure src="sols_12_unique.png" title="Unique (under rotation) solutions for the Centrifuge Problem for $n=12$" lightbox="true" lightbox-group="solutions-n12" class="noshadow img-no-radius" width="450px">}}
 
 ## Going further
 
