@@ -9,7 +9,7 @@ categories: [science]
 projects: []
 
 date: "2021-06-01T00:00:00Z"
-lastmod: "2021-06-03T10:00:00Z"
+lastmod: "2021-06-05T20:00:00Z"
 featured: false
 draft: false
 
@@ -330,19 +330,19 @@ This improvement becomes super clear when we solve for $n = 12$, as we go from 1
 
 ### Improvement A
 
-One minor issue I've noticed with my `ReduceCentrifugeSols` method is that it doesn't reduce solutions that are the same under reflections (for instance, $n = 12$ has 18 unique solutions, as two of them for $k = 6$ are the same). This is an issue I may address in the future, but for now I'm happy with my method.
+One minor issue I've noticed with my `ReduceCentrifugeSols` method is that it doesn't reduce solutions that are the same under reflections (for instance, $n = 12$ has actually 18 truly unique solutions, as two of them for $k = 6$ are the same). This is an issue I may address in the future, but for now I'm happy with my method.
 
 ### Improvement B
 
 Another point I'd like to work on in the future is to rewrite the code to use pipes (`RightComposition`), so that functions can be properly composed:
 ```mathematica
-12 // FindCentrifugeSols // DrawCentrifugeUniqueSols
+12 // FindCentrifugeSols // DrawCentrifugeSols
 ```
 
 or
 
 ```mathematica
-12 // FindCentrifugeSols // ReduceRotations //DrawCentrifugeUniqueSols
+12 // FindCentrifugeSols // ReduceRotations //DrawCentrifugeSols
 ```
 
 ### Improvement C
