@@ -105,7 +105,7 @@ However, this function is slower in the range of $n$ we would solve the problem 
 Needs["GeneralUtilities`"]
 f1 = MyFindRoots[1, #] &;
 f2 = MyFindRootsNative[1, #] &;
-BenchmarkPlot[{f1, f2}, # &, PowerRange[1, 1000], "IncludeFits" -> True]
+BenchmarkPlot[{f1, f2}, # &, Range[100], "IncludeFits" -> True, TimeConstraint -> 60]
 ```
 
 {{< figure src="benchmark.png" title="Benchmarking results of `MyFindRoots` compared to `MyFindRootsNative`" lightbox="false" class="noshadow" width="80%" >}}
