@@ -33,6 +33,18 @@ div.alert-todo > div:first-child::before {
   padding: 23px 10px 21px 10px;
 }
 
+.dark {
+  .alert {
+    border-color: $alert-note-border-color-dark;
+    background-color: #2a2a2a;
+    color: inherit;
+  }
+
+  div.alert-note > div:first-child::before {
+    color: $alert-note-border-color-dark;
+  }
+}
+
 div.alert > div {
   font-size: 0.9rem;
 }
