@@ -6,7 +6,7 @@ active = true  # Activate this widget? true/false
 weight = 40  # Order that this section will appear.
 
 title = "Experience"
-subtitle = "[Download CV](../files/alfredo-hernandez-cv.pdf)"
+subtitle = "[Download CV](../uploads/alfredo-hernandez-cv.pdf)"
 
 # Date format for experience
 #   Refer to https://sourcethemes.com/academic/docs/customization/#date-format
@@ -18,7 +18,7 @@ date_format = "Jan 2006"
 #   Leave `date_end` empty if it's your current employer.
 #   Begin/end multi-line descriptions with 3 quotes `"""`.
 [[experience]]
-  title = "Data Scientist"
+  title = "Machine Learning Engineer"
   logo = "supersolid-logo.png"
   company = "Supersolid Ltd."
   company_url = "https://www.supersolid.com/"
@@ -29,8 +29,9 @@ date_format = "Jan 2006"
   My main responsibilities at Supersolid include:
 
   - Use machine learning techniques to support the User Acquisition team in projecting campaign profitability allowing for earlier actions.
-  - Develop and maintain custom APIs and tools to automate several processes.
-  - Assist on data modelling to help develop our internal stack.
+  - Develop and maintain serverless APIs and tools to automate and simplify several processes.
+  - Build and maintain data pipelines to help develop our internal stack.
+  - Build and maintain internal R packages to promote reproducible analysis frameworks, reduce development time of APIs and tools, and enhance knowledge management.
   """
 
 [[experience]]
