@@ -81,6 +81,7 @@ highlight_languages:
   - latex
   - mathematica
   - javascript
+highlight_style: 'tomorrow'
 math: true
 diagram: false
 privacy_pack: false
