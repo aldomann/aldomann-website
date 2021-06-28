@@ -7,7 +7,7 @@
 
 theme: alf
 day_night: true
-font: ''
+font: 'alf'
 font_size: M
 
 # SEO
