@@ -14,7 +14,7 @@ image:
 links:
 - icon: github
   icon_pack: fab
-  name: Code
+  name: Icons
   url: https://github.com/aldomann/paper-extra-icons/
 url_code: ""
 url_pdf: ""
