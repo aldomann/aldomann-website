@@ -35,14 +35,13 @@ authors:
   - Sotiria Triantopoulou
   - Rositsa Histova
   - Andrzej Wojcik
-authors_short:
-- David
+# authors_short:
 author_notes: []
-date: ""
+date: "2021-06-17"
 doi: "10.1080/09553002.2021.1941380"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2021-06-02T00:00:00Z"
+publishDate: "2021-06-17T00:00:00Z"
 
 # Publication type.
 # Legend: 0 = Uncategorized; 1 = Conference paper; 2 = Journal article;
@@ -51,7 +50,7 @@ publishDate: "2021-06-02T00:00:00Z"
 publication_types: ["2"]
 
 # Publication name and optional abbreviated publication name.
-publication: "*International Journal of Radiation Biology*, 0(0), 1–48"
+publication: "*International Journal of Radiation Biology*, 97(9), 1181-1198"
 publication_short: ""
 
 abstract: Depending on the exposure scenario, different biological and/or physical assays will be required to recover the exposure situation and to obtain reliable dose estimates to aid medical decision making. Inter-laboratory comparisons (ILCs) are a central tool to validate and improve the performance of methods and laboratories. In most cases such ILCs are performed under laboratory conditions where the influence of parameters contributing to uncertainties can be minimized. In a real-life scenario, the situation is much more complicated, and it is therefore crucial to validate methods and laboratories’ abilities to carry out these methods under more realistic conditions. In 2019, EURADOS (The European Radiation Dosimetry Group) Working Group 10 (Retrospective Dosimetry) and RENEB (Running the European Network of Biological and retrospective Physical dosimetry) organized a field exercise in Lund, Sweden, to validate different methods for biological and physical retrospective dosimetry in parallel by simulating real-life exposure scenarios.
@@ -60,7 +59,7 @@ abstract: Depending on the exposure scenario, different biological and/or physic
 summary: ""
 
 tags:
-- Source Themes
+- biology
 featured: false
 
 # links:
