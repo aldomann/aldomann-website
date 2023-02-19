@@ -69,7 +69,7 @@ url_video: ''
 # Featured image
 # To use, add an image named `featured.jpg/png` to your page's folder.
 image:
-  caption: 'Mockup illustrating Biodose Tools’ color coding to create an intuitive visual organization of the user interface.'
+  caption: 'Screenshot of Biodose Tools’ dose-effect fitting module for dicentric aberrations.'
   focal_point: ""
   preview_only: false
 
